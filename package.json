@@ -1,0 +1,14 @@
+{
+  "name": "mod2_task1",
+  "version": "1.0.0",
+  "main": "jquery-3.2.1.min.js",
+  "scripts": {
+    "dev": "live-server"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "live-server": "^1.2.0"
+  }
+}

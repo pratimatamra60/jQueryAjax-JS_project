@@ -1,0 +1,26 @@
+table th {
+            font-weight:bold;
+            background-color: green;
+            color:white;
+        }
+#firstLine{
+	display: flex;
+}
+
+.rightAlign{
+	flex: 1;
+	position: absolute;
+	top: 180px;
+	right: 180px;
+}
+
+footer{
+	background-color: black;
+	color: white;
+}
+p{
+	padding-left:10px;
+}
+div{
+	margin: 10px;
+}
