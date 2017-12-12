@@ -1,12 +1,22 @@
+.nav>li>a{
+	padding: 15px 25px;
+}
+.nav{
+	border-radius: 0px;
+}
 table th {
             font-weight:bold;
-            background-color: green;
+            background-color: #85C1E9;
             color:white;
         }
-#firstLine{
-	display: flex;
-}
 
+.logo img{height:50px;
+width:50px;}
+
+footer{margin: 1em 0 1em 0;}
+.row{
+	margin: 0px;
+}
 .rightAlign{
 	flex: 1;
 	position: absolute;
@@ -14,13 +24,23 @@ table th {
 	right: 180px;
 }
 
-footer{
-	background-color: black;
-	color: white;
+.right{
+	text-align: right;
 }
-p{
-	padding-left:10px;
+.left{
+  text-align: left;
 }
-div{
-	margin: 10px;
+
+footer {
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #85C1E9;
+   color: white;
+   text-align: center;
+}
+
+
+.center{
+	text-align: center;
 }

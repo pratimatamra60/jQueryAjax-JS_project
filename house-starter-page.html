@@ -19,34 +19,49 @@
     
     <body data-json="congress-113-house.json">
 <!-- ############## NAVIGATION ############# -->
- <nav class="container">
-    <div id="firstLine">
-      <div>
-        <a href="home-starter-page.html">
-          <img src="img/TgifLogo.jpg" alt="tgif Logo">
-        </a>
-      </div>
-      <div class="rightAlign" id="position">
-        <i class="fa fa-envelope-o fa-3x sr-contact"></i>
-        <a href="mailto:your-email@your-domain.com">info@tgif.net</a>
-      </div>
-    </div>
-    
-              
-    <div class="navbar navbar-inverse ">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="home-starter-page.html">Home</a></li>
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Congress 113
-          <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-                    <li id="senate"><a href="senate-starter-page.html">Senate</a></li>
-                    <li id= "house"><a href="house-starter-page.html">House</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>   
-</nav>       
+ <nav class="fixed-top container">
+           
+        <div class="navbar navbar-inverse">
+                <a class="logo navbar-left" href="home-starter-page.html">
+                    <img src="img/home.jpg" alt="tgif Logo">
+                </a>
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">TGIF</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li><a href="home-starter-page.html">Home</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Congress
+                    <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li id="senate"><a href="senate-starter-page.html">Senate</a></li>
+                            <li id="house"><a href="house-starter-page.html">House</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Attendence
+                    <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li id="senate"><a href="senate-attendance.html">Senate</a></li>
+                            <li id="house"><a href="house-attendance.html">House</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Party Loyalty
+                    <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li id="senate"><a href="senate-loyalty.html">Senate</a></li>
+                            <li id="house"><a href="house-loyalty.html">House</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span class="glyphicon glyphicon-envelope"></span> info@tgif.net</a></li>
+                </ul>
+        </div>
+    </nav>
+
+
        
             <!--Table container-->
   <div class="container">     
@@ -54,21 +69,27 @@
             <p>The major power of the House is to pass federal legislation that affects the entire country, although its bills must also be passed by the Senate and further agreed to by the U.S. President before becoming law (unless both the House and Senate re-pass the legislation with a two-thirds majority in each chamber). The House has some exclusive powers: the power to initiate revenue bills, to impeach officials (impeached officials are subsequently tried in the Senate), and to elect the U.S. President in case there is no majority in the Electoral College.</p>
             <p>Each U.S. state is represented in the House in proportion to its population as measured in the census, but every state is entitled to at least one representative. </p>
 
-  <!-- ############## CHECKBOXES  ############### -->       
-        
-  <div class="checkbox" id="filter">
-            <label>
-              <input type="checkbox" class="mycheck" value="republican">Repuclican
-            </label>
-
-            <label>
-              <input type="checkbox" class="mycheck" value="democrat">Democrat
-            </label>
-
-            <label>
-              <input type="checkbox" class="mycheck" value="independent">Independent
-            </label>
-  </div>
+ <!-- ############## CHECKBOXES  ############### -->
+          <form class="form-inline">
+            <div class="checkbox">
+                <p><b>Filter by Party :</b></p>
+                <label class="checkbox-inline">
+                    <input type="checkbox" checked="checked" value="R" class=" partySelector">Repuclican
+                </label>
+                <label class="checkbox-inline">
+                    <input type="checkbox" checked="checked" value="D" class=" partySelector" checked="checked">Democrat
+                </label>
+                <label class="checkbox-inline">
+                    <input type="checkbox" checked="checked" value="I" class=" partySelector">Independent</label>
+            </div>
+            <!-- ###############DROPDOWNS################## -->
+            <div name="filter" class="form-group pull-right">
+                <p class=" right"><b>Filter by State :</b></p>
+                <select id="stateFilter" class="custon-select right">
+                    <option class="right" value="">--select state--</option>
+                </select>
+            </div>
+        </form>
   
  <!-- ############# TABLE  ############### -->       
 

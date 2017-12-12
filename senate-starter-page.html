@@ -1,105 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-      <!-- meta  -->
 
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <!-- links  -->
-
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
-      <!-- scripts  -->
-
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-      <link rel="stylesheet" type="text/css" href="style/style.css"> 
-    </head>
-    
+<head>
+    <!-- meta  -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- links  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- scripts  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style/style.css">
+</head>
 
 <body data-json="senate.json">
- <!-- ################################# -->
- <nav class="container">
-	<div id="firstLine">
-      <div>
-      	<a href="home-starter-page.html">
-		  <img src="img/TgifLogo.jpg" alt="tgif Logo">
-		</a>
-      </div>
-      <div class="rightAlign">
-        <i class="fa fa-envelope-o fa-3x sr-contact"></i>
-        <a href="mailto:your-email@your-domain.com">info@tgif.net</a>
-      </div>
+    <!-- ################################# -->
+    <nav class="fixed-top container">
+        <div class="navbar navbar-inverse">
+            <a class="logo navbar-left" href="home-starter-page.html">
+                    <img src="img/home.jpg" alt="tgif Logo">
+                </a>
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">TGIF</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="home-starter-page.html">Home</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Congress
+                    <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li id="senate"><a href="senate-starter-page.html">Senate</a></li>
+                        <li id="house"><a href="house-starter-page.html">House</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Attendence
+                    <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li id="senate"><a href="senate-attendance.html">Senate</a></li>
+                        <li id="house"><a href="house-attendance.html">House</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Party Loyalty
+                    <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li id="senate"><a href="senate-loyalty.html">Senate</a></li>
+                        <li id="house"><a href="house-loyalty.html">House</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-envelope"></span> info@tgif.net</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- ################################# -->
+    <div class="container">
+        <h2>Senators</h2>
+        <p>First convened in 1789, the composition and powers of the Senate are established in Article One of the U.S. Constitution. Each state is represented by two senators, regardless of population, who serve staggered six-year terms. The Senate has several exclusive powers not granted to the House, including consenting to treaties as a precondition to their ratification and consenting to or confirming appointments of Cabinet secretaries, federal judges, other federal executive officials, military officers, regulatory officials, ambassadors, and other federal uniformed officers, as well as trial of federal officials impeached by the House.</p>
+        <!-- ############## CHECKBOXES  ############### -->
+        <form class="form-inline">
+            <div class="checkbox">
+                <p><b>Filter by Party :</b></p>
+                <label class="checkbox-inline">
+                    <input type="checkbox" checked="checked" value="R" class=" partySelector">Repuclican
+                </label>
+                <label class="checkbox-inline">
+                    <input type="checkbox" checked="checked" value="D" class=" partySelector" checked="checked">Democrat
+                </label>
+                <label class="checkbox-inline">
+                    <input type="checkbox" checked="checked" value="I" class=" partySelector">Independent</label>
+            </div>
+            <!-- ###############DROPDOWNS################## -->
+            <div name="filter" class="form-group pull-right">
+                <p class=" right"><b>Filter by State :</b></p>
+                <select id="stateFilter" class="custon-select right">
+                    <option class="right" value="">--select state--</option>
+                </select>
+            </div>
+        </form>
+        <!-- ################TABLE################# -->
+        <table id="tableData" class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Party</th>
+                    <th>State</th>
+                    <th>Years in Office</th>
+                    <th>% Vote with Party</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <footer class="blockquote-footer text-center transparent-box">© 2016 TGIF | All Rights Reserved</footer>
     </div>
-    <div class="navbar navbar-inverse ">
-    	<ul class="nav navbar-nav">
-	      <li class="active"><a href="home-starter-page.html">Home</a></li>
-	      <li class="dropdown">
-	      	<a class="dropdown-toggle" data-toggle="dropdown" href="#">Congress 113
-	      	<span class="caret"></span></a>
-	      	<ul class="dropdown-menu">
-	                  <li id="senate"><a href="senate-starter-page.html">Senate</a></li>
-                    <li id= "house"><a href="house-starter-page.html">House</a></li>
-	        </ul>
-	      </li>
-	    </ul>
-    </div>   
-</nav>       
+    <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="script.js">
+    //-------------Use the JavaScript function JSON.stringify() to convert it into a string, then pulling JSON data from an external file and inserting JSON data into an HTML page using jQuery
 
- <!-- ################################# -->       
+    /* var myJSON = JSON.stringify(senate,null,2);
+       document.getElementById("demo").innerHTML = myJSON;*/
+    </script>
+</body>
 
-<div class="container">
-	        <h2>Senators</h2>
-            <p>First convened in 1789, the composition and powers of the Senate are established in Article One of the U.S. Constitution. Each state is represented by two senators, regardless of population, who serve staggered six-year terms. The Senate has several exclusive powers not granted to the House, including consenting to treaties as a precondition to their ratification and consenting to or confirming appointments of Cabinet secretaries, federal judges, other federal executive officials, military officers, regulatory officials, ambassadors, and other federal uniformed officers, as well as trial of federal officials impeached by the House.</p>
-
- <!-- ############## CHECKBOXES  ############### -->        
-	<div class="checkbox" id="filter">
-            <label>
-              <input type="checkbox" class="mycheck" value="republican">Repuclican
-            </label>
-
-            <label>
-              <input type="checkbox" class="mycheck" value="democrat">Democrat
-            </label>
-
-            <label>
-              <input type="checkbox" class="mycheck" value="independent">Independent
-            </label>
-  </div>
- <!-- ################################# -->       
-
-	<table id="tableData"class="table table-hover">
-		<thead>
-			<tr>
-				<th>Name</th>
-				<th>Party</th>
-				<th>State</th>
-				<th>Years in Office</th>
-				<th>% Vote with Party</th>
-			</tr>	
-		</thead>
-		<tbody>
-			<tr>
-				
-			</tr>			
-		</tbody>
-	</table>
-
-	 <footer class="blockquote-footer text-center transparent-box">© 2016 TGIF | All Rights Reserved</footer>
-	
-</div>
-
-	
-    <script type="text/javascript" src="jquery-3.2.1.min.js" ></script>
-    <script type="text/javascript" src="script.js"> 
- //-------------Use the JavaScript function JSON.stringify() to convert it into a string, then pulling JSON data from an external file and inserting JSON data into an HTML page using jQuery
-
-/* var myJSON = JSON.stringify(senate,null,2);
-   document.getElementById("demo").innerHTML = myJSON;*/
-
-</script>
-
-
-</body>  
 </html>
